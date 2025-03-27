@@ -2,24 +2,46 @@
   <div class="input-group">
     <p>
       <label for="inital-investment">Initial Investment</label>
-      <input id="inital-investment" type="number" />
+      <input
+        name="inital-investment"
+        id="inital-investment"
+        type="number"
+        [(ngModel)]="enteredInitialInvestment"
+      />
     </p>
+    <!-- egal ob ich typ number eingebe oder string, inputeingaben werden IMMER strings -->
     <p>
       <label for="annual-investment">Annual Investment</label>
-      <input id="annual-investment" type="number" />
+      <input
+        name="annual-investment"
+        id="annual-investment"
+        type="number"
+        [(ngModel)]="enteredAnnualInvestment"
+      />
     </p>
   </div>
   <div class="input-group">
     <p>
       <label for="expected-return">Expected Return</label>
-      <input id="expected-return" type="number" />
+      <input
+        name="expected-return"
+        id="expected-return"
+        type="number"
+        [(ngModel)]="enteredExpectedReturn"
+      />
     </p>
     <p>
       <label for="duration">Duration</label>
-      <input id="duration" type="number" />
+      <input
+        name="duration"
+        id="duration"
+        type="number"
+        [(ngModel)]="enteredDuration"
+      />
     </p>
   </div>
   <p>
     <button>Calculate</button>
   </p>
 </form>
+<p>test{{ enteredInitialInvestment }}</p>
