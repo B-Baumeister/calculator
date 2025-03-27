@@ -10,7 +10,7 @@ import { UserInputComponent } from './user-input/user-input.component';
   imports: [HeaderComponent, InvestmentResultsComponent, UserInputComponent],
 })
 export class AppComponent {
-  calculateInvestmentResults(
+  onCalculateInvestmentResults(
     // 1. version mit den variablen als input. Achtung: wenn ohne {} dann ist die Anordnung der Parameter wichtig. Als Objekt kann es variabel sein, wichtig aber, ein title für die variable (hier data)
     data: {
       initialInvestment: number;
@@ -40,7 +40,7 @@ export class AppComponent {
         totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
-
-    return annualData;
+    console.log('annualData', annualData);
+    // return annualData;
   }
 }
