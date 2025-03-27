@@ -20,26 +20,24 @@ export class AppComponent {
     }
   ) {
     //Alternativ zu data: hier direkt wieder enstructuren:
-    // const { initialInvestment, duration, expectedReturn, annualInvestment } =
-    //   data;
+    const { initialInvestment, duration, expectedReturn, annualInvestment } =
+      data;
     const annualData = [];
-    let investmentValue = data.initialInvestment;
+    let investmentValue = initialInvestment;
 
-    for (let i = 0; i < data.duration; i++) {
+    for (let i = 0; i < duration; i++) {
       const year = i + 1;
-      const interestEarnedInYear =
-        investmentValue * (data.expectedReturn / 100);
-      investmentValue += interestEarnedInYear + data.annualInvestment;
+      const interestEarnedInYear = investmentValue * (expectedReturn / 100);
+      investmentValue += interestEarnedInYear + annualInvestment;
       const totalInterest =
-        investmentValue - data.annualInvestment * year - data.initialInvestment;
+        investmentValue - annualInvestment * year - initialInvestment;
       annualData.push({
         year: year,
         interest: interestEarnedInYear,
         valueEndOfYear: investmentValue,
-        annualInvestment: data.annualInvestment,
+        annualInvestment: annualInvestment,
         totalInterest: totalInterest,
-        totalAmountInvested:
-          data.initialInvestment + data.annualInvestment * year,
+        totalAmountInvested: initialInvestment + annualInvestment * year,
       });
     }
 
